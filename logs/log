@@ -15,3 +15,20 @@
 2023-10-25 16:42:29 - D:\Hub\Reptiles_code\github_reptiles.py[line:44] - ERROR: 连接失败,网址为https://github.com/yangeroge/my-awesome-repo/commits/
 2023-10-25 16:42:29 - D:\Hub\Reptiles_code\github_reptiles.py[line:45] - ERROR: 连接方式为get,异常信息为('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
 2023-10-25 16:42:31 - D:\Hub\Reptiles_code\github_reptiles.py[line:88] - ERROR: 获取提交记录失败失败原因为'NoneType' object has no attribute 'text'
+2023-10-26 14:14:40 - D:\Hub\Reptiles_code\github_reptiles.py[line:44] - ERROR: 连接失败,网址为https://github.com/yangeroge/code_reptiles
+2023-10-26 14:14:44 - D:\Hub\Reptiles_code\github_reptiles.py[line:45] - ERROR: 连接方式为get,异常信息为('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2023-10-26 14:45:40 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:14:56 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:15:42 - D:\Hub\Reptiles_code\github_reptiles.py[line:62] - ERROR: 连接失败,网址为https://github.com/yangeroge/code_reptiles
+2023-10-26 15:15:43 - D:\Hub\Reptiles_code\github_reptiles.py[line:63] - ERROR: 连接方式为get,异常信息为('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2023-10-26 15:15:44 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:16:09 - D:\Hub\Reptiles_code\github_reptiles.py[line:62] - ERROR: 连接失败,网址为https://github.com/yangeroge/code_reptiles/commits/
+2023-10-26 15:20:11 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:21:21 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:26:04 - D:\Hub\Reptiles_code\github_reptiles.py[line:98] - ERROR: 提交记录构成为[{'commits_auth': 'zhukr', 'commits_time': '2023-10-26 11:31:25', 'commits_href': 'https://github.com/yangeroge/code_reptiles/commit/d7b97755210f2da3bfe003de65e9387c408bb8ff'}]
+2023-10-26 15:32:40 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:32:45 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:39:57 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功
+2023-10-26 15:40:25 - D:\Hub\Reptiles_code\github_reptiles.py[line:62] - ERROR: 连接失败,网址为https://github.com/yangeroge/code_reptiles
+2023-10-26 15:40:25 - D:\Hub\Reptiles_code\github_reptiles.py[line:63] - ERROR: 连接方式为get,异常信息为('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2023-10-26 15:40:26 - D:\Hub\Reptiles_code\github_reptiles.py[line:41] - ERROR: ssh_key认证成功

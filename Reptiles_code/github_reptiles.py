@@ -4,6 +4,8 @@ import urllib3
 import logging
 import logging.handlers
 import logging.config
+import sys
+from sshpubkeys import SSHKey
 from bs4 import BeautifulSoup
 from colorama import Fore, Back, init
 from github_config import Dispose_ini
@@ -19,6 +21,8 @@ class REPRILE(object):
                                                        dis.get_option(
                                                            'code_warehouse', 'warehouse'))
         self.github_warehouse_commits_path = '{}/{}'.format(self.github_warehouse_path, 'commits/')
+        self.ssh_key = dis.get_option('ssh_key', 'ssh_key')
+
 
         # 加载日志配置
         self.logger_path = os.getcwd()
@@ -30,11 +34,25 @@ class REPRILE(object):
         self.logger = logging.getLogger('fileAndConsole')
         self.code_dist = self.code_warehouse_commits()
 
+    def ssh_key_authentication(self):
+        ssh = SSHKey(self.ssh_key, strict_mode=True)
+        try:
+            ssh.parse()
+            self.logger.error('ssh_key认证成功')
+        except Exception as err:
+            self.logger.error('ssh_key认证失败')
+            sys.exit(1)
+        except NotImplementedError as err:
+            self.logger.error('ssh_key认证失败')
+            sys.exit(1)
+
     def req(self, type, addr, data='', **args):
+        self.ssh_key_authentication()  # ssh_key 认证登录
         urllib3.disable_warnings()  # 报警接触
+
         if type == 'get':
             try:
-                responses = requests.get(addr, timeout=60, verify=False)
+                responses = requests.get(addr, timeout=120, verify=False)
                 if responses.status_code == 200:
                     self.logger.info('连接成功，网址为%s' % addr)
                     return responses
@@ -74,7 +92,8 @@ class REPRILE(object):
                         'commits_auth': commits_find.div.find('div', class_='d-flex').find('div', class_='f6').find(
                             class_='commit-author').get_text(),
                         'commits_time': end_time.strftime("%Y-%m-%d %H:%M:%S"),
-                        'commits_href': "https://github.com" + commits_find.div.p.a['href']
+                        'commits_href': "https://github.com" + commits_find.div.p.a['href'],
+                        'commit_summary': commits_find.div.find('p', class_='mb-1').get_text(),
                     }
                     commits_dist.append(commits_dict)
             self.logger.error('提交记录构成为%s' % commits_dist)
